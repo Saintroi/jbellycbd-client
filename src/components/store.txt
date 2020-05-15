@@ -1,0 +1,65 @@
+import React, { useEffect, useRef } from 'react';
+import { withRouter } from 'react-router-dom';
+import styled from 'styled-components';
+
+// styles
+
+const Wrap = styled.div`
+  grid-area: content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.theme.BackgroundColor};
+  height: 100vh;
+  width:99vw;
+  overflow-x: hidden;
+
+p{
+  font-size: 1vmin;
+  padding: 20px;
+  margin: 0px 20px 0px 20px;
+  text-align: center;
+}
+`;
+
+//JSX
+
+function Store(props) {
+  const storeDiv = useRef(null);
+  const scriptRef = useRef(null);
+  window.ecwid_script_defer = true;
+  window.ecwid_dynamic_widgets = true;
+  window._xnext_initialization_scripts = [{
+    widgetType: 'ProductBrowser',
+    id: 'my-store-22606304',
+    arg: ["id=productBrowser"]
+  }
+  ];
+
+  var script = document.createElement('script');
+  script.charset = 'utf-8';
+  script.type = 'text/javascript';
+  script.src = 'https://app.ecwid.com/script.js?22606304';
+  script.defer = true;
+  script.ref=scriptRef;
+
+
+
+useEffect(() => {
+    if(!scriptRef.current){
+    storeDiv.current.appendChild(script);
+    }
+});
+
+  return (
+    <Wrap>
+      <div id="my-store-22606304" ref={storeDiv}></div>
+      <div id="my-categories-22606304"></div>
+      <div id="my-search-22606304"></div>
+      <div className="ec-cart-widget"></div>
+    </Wrap>
+
+    );
+  }
+
+export default withRouter(Store);
