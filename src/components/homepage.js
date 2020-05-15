@@ -316,7 +316,7 @@ function Homepage(props) {
                 { (window.screen.width > 767) ? <img src={mute ? soundmuted : soundon} onClick={changeVol} alt=""></img>: "" }
             <h1>JBelly CBD Store</h1>
             <p>
-                Type in discount code JBELLYBURN at checkout for a 10% discount on your order!
+                Type in discount code JBELLYBURN at checkout for a 10% discount on your order and FREE shipping!
                 </p>
             <StyledLink onClick={scrollToStore}><h2>THC Free and Pure CBD Products</h2></StyledLink>
         </Cover>
