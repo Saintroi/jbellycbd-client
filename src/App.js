@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Route, withRouter } from 'react-router-dom';
 import styled, { ThemeProvider } from 'styled-components';
-import { Login, ErrorBoundary, Homepage, Footer, Store } from './components';
+import { ErrorBoundary, Homepage, Footer, Store } from './components';
 import GlobalFonts from './fonts/fonts';
 import './App.css';
 
