@@ -33,9 +33,16 @@ const Wrap = styled.div`
     width: 20%;
 
     .horizontal-menu-button{
-      color: ${(props) => props.theme.altBackgroundColor} !important;
+      color: ${(props) => props.theme.altAccentColor} !important;
       text-align: center;
     }
+  }
+  .ec-size .ec-store .grid-category__title {
+    background-color: ${(props) => props.theme.altAccentColor} !important;
+  }
+
+  .ec-size .ec-store .grid-category--no-image .grid-category__title-inner{
+    color:  white !important
   }
 
   #my-search-22606304{

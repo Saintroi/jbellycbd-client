@@ -11,10 +11,10 @@ import './App.css';
 
 const theme = {
   backgroundColor: 'rgba(244, 244, 244, 1)',
-  altBackgroundColor: 'rgba(3,41,56, 1)',
+  altBackgroundColor: 'rgb(230,231,231)',
   vignetteColor: 'rgba(34, 44, 55, 1)',
   accentColor: 'white',
-  altAccentColor: 'rgba(190, 137, 33, 1)',
+  altAccentColor: 'rgb(87,108,126)',
   acOverlayDark: 'rgba(3,41,56, 1)',
   textColor: 'black',
   altTextColor: 'rgba(130, 152, 163, 1)' 

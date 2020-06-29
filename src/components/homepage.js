@@ -213,7 +213,7 @@ const Purpose = styled.div`
 const About = styled.div`
     color: white;
     text-align: center;
-    background-color: ${(props) => props.theme.altBackgroundColor};
+    background-color: ${(props) => props.theme.altAccentColor};
     border-radius: 0px;
     width: 100%;
     flex: 2;
@@ -336,7 +336,7 @@ function Homepage(props) {
             <h1>About On Duty CBD</h1>
             <p>
                 ON Duty CBD Products originate from small farms operated by American Veterans who raise their crops like they served: with HONOR and INTEGRITY. 
-                On the Square Enterprises is proud to partner with ON Duty CBD to bring Veteran Farmed CBD Products to our Brothers and their families. 
+                JBelly is proud to partner with ON Duty CBD to bring Veteran Farmed CBD Products to our Brothers and their families. 
                 On Duty products follow an organic process that can be tracked from the farm your door– this means zero pesticides, zero chemicals, and zero heavy metals. 
                 Each On Duty product is labeled with a QR code providing you 24/7 access to a multi-page 3rd party lab report. Our products, like our Veteran Farmers, are always On Duty!
             </p>
