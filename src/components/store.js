@@ -45,6 +45,12 @@ const Wrap = styled.div`
     color:  white !important
   }
 
+  .ec-size .ec-store .grid-product__title-inner{
+    &:focus, &:active, &:hover{
+      color: ${(props) => props.theme.altTextColor} !important;
+    }
+  }
+
   #my-search-22606304{
     width: 100%;
     display: flex;

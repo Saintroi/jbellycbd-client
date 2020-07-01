@@ -324,12 +324,12 @@ function Homepage(props) {
         <Purpose>
             <h1>JBellyBurn is Proud to Partner with On Duty CBD</h1>
             <p>
-            JBelly is proud to provide her community access to the highest quality CBD products. From dancer, performers, and athletes, to arthritis sufferers, people around the world are enjoying the benefits of CBD for countless afflictions. 
+            Janelle is proud to provide her community access to the highest quality CBD products available. From dancers, performers, and athletes, to arthritis sufferers, people around the world are enjoying the benefits of CBD for countless afflictions. 
             Products containing CBD have been shown to reduce inflammation, assist with pain management and relief, and even reduce insomnia.<br></br><br></br>
-            JBelly exclusively promotes ON DUTY CBD products because I personally use only ON DUTY CBD, my family uses it and we trust their processes and feel the benefits everyday. 
-            On Duty is a Veteran farmed, Veteran operated business on a mission to provide you with sustainably farmed health and wellness products. 
-            We are proud to bring you trusted products that are distilled with American values from the farm to your door.<br></br><br></br>
-            We hope you feel the benefits of the ON DUTY CBD products and hope you use them in good health.
+            I exclusively promote ON DUTY CBD products because I personally use it everyday.  On Duty CBD is my #1 go to for sore muscles, calming stage jitters and helping me get a good nights sleeps.
+              My family and friend use ON Duty CBD and we trust their processes and feel the benefits everyday. On Duty is a Veteran farmed, Veteran operated business on a mission to 
+              provide you with sustainably farmed health and wellness products. I am proud to bring you trusted organic products that are distilled with American values from the farm to your door.<br></br><br></br>
+              I hope you feel the benefits of the ON DUTY CBD products and hope you use them in good health.
             </p>
         </Purpose>
         <About>
