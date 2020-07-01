@@ -155,7 +155,8 @@ const Contact = styled.div`
     h1{
         font-size: 3vmin;
         width: 100%;
-        margin: 10px;
+        margin-bottom: 10px;
+        text-align: center;
     }
 
     a{
