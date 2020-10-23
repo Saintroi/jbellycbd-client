@@ -2,9 +2,6 @@ import React, { useEffect, useRef, useState } from 'react';
 import { withRouter } from 'react-router-dom';
 import styled from 'styled-components';
 import { Store } from '.'
-import Player from '@vimeo/player';
-import soundmuted from '../img/sound-muted.svg'
-import soundon from '../img/sound-on.svg'
 
 // styles
 
@@ -20,83 +17,37 @@ const MainWrap = styled.div`
 
 const Cover = styled.div`
     color: white;
-    background-color: ${(props) => props.theme.altBackgroundColor};
-    overflow: hidden;
-    flex: 4;
-    height: 100vh;
-    width: 100vw;
-    align-self: stretch;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
+    background-color: ${(props) => props.theme.backgroundColor};
+    width: 100vw;
+    height: 65vh;
+    margin-bottom: 30px;
 
-h1{
-    position: absolute;
-    z-index: 98;
-    top: 40%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 4vmin;
-}
-
-p{
-    position: absolute;
-    z-index: 98;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2vmin;
-}
-
-img{
-    position: absolute;
-    z-index: 98;
-    top: 95%;
-    left: 5%;
+    h1{
+    font-size: 5vmin;
+    color: ${(props) => props.theme.altTextColor};
     }
 
-.iframe-container {
-    height: 100%;
-    overflow: hidden;
-    padding: 0;
-    position: relative;
+    img{
+        margin-top: 10px;
+        min-width: 65%;
+        width: auto;
+        height: 80%;
+        z-index: 95;
     }
-
-iframe{
-    box-sizing: border-box;
-    height: 56.25vw;
-    left: 50%;
-    min-height: 100%;
-    min-width: 100%;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    top: 50%;
-    width: 177.77777778vh;
-  }
 
   @media only screen and (max-width: 767px){
-    h1{
-        top: 25%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        margin: 0px;
-        font-size: 10vmin;
-        width: 100%;
+      height: 40vh;
+      margin-bottom: 0;
+      img{
+          height: 210px;
+          width: 375px;
+      }
     }
-
-    p{
-        top: 55%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        font-size: 6vmin;
-        padding:5px;
-        margin: 0px;
-        width: 99%;
-    }
-    .iframe-container {
-        visibility: hidden;
-    }
-    }
-
-
 `;
 
 const StyledLink = styled.a`
@@ -104,16 +55,11 @@ const StyledLink = styled.a`
     background: linear-gradient(to right,  ${(props) => props.theme.acOverlayDark} 50%, ${(props) => props.theme.altAccentColor} 50%);
     background-size: 200% 100%;
     background-position: right bottom;
-    transition: all .3s ease-out;
+    transition: all .2s ease-out;
     color: white;
     text-decoration: none;
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 98;
     white-space: nowrap;
-    width: 40%;
+    width: 100%;
     height: 5%;
     display: flex;
     align-items: center;
@@ -149,7 +95,7 @@ const Contact = styled.div`
     background-color: ${(props) => props.theme.altAccentColor};
     border-radius: 0px;
     width: 100%;
-    flex: 2;
+    flex: 1;
     padding: 0px 10px 10px 10px;
 
     h1{
@@ -185,7 +131,7 @@ const Purpose = styled.div`
     border-radius: 0px;
     margin-bottom: 20px;
     width: 100%;
-    flex: 2;
+    flex: 1;
     padding-top: 10px;
 
     p{
@@ -217,7 +163,7 @@ const About = styled.div`
     background-color: ${(props) => props.theme.altAccentColor};
     border-radius: 0px;
     width: 100%;
-    flex: 2;
+    flex: 1;
     padding: 20px 0px 30px 0px;
 
     h1{
@@ -250,7 +196,7 @@ const CBD = styled.div`
     background-color: ${(props) => props.theme.backgroundColor};
     border-radius: 0px;
     width: 80%;
-    flex: 2;
+    flex: 1;
     padding: 10px 0px 20px 0px;
 
 h1{
@@ -283,43 +229,17 @@ p{
 
 function Homepage(props) {
     const storeRef = useRef(null);
-    const vidRef = useRef(null);
-    var player;
-
-    const [mute, setMute] = useState(true);
-
-    function controlPlayer(){
-        player = new Player(vidRef.current);
-        player.on('play', function() {
-            console.log('Cover Video Playing');
-        });
-    }
-
-    function changeVol(){
-        setMute(!mute);
-        mute ? player.setVolume(0.5) : player.setVolume(0);
-    }
 
     const scrollToStore = () => {
         storeRef.current.scrollIntoView({behavior: 'smooth'})
     }
 
-    useEffect(() => {
-        (window.screen.width > 767) && controlPlayer();
-    });
-
   return (
     <MainWrap>
         <Cover>
-             <div className="iframe-container">
-                <iframe title="cover"src="https://player.vimeo.com/video/371399670?background=1?api=1" frameBorder="0" scrolling="no" allow="autoplay;  fullscreen" allowFullScreen ref={vidRef}></iframe>
-            </div>
-                { (window.screen.width > 767) ? <img src={mute ? soundmuted : soundon} onClick={changeVol} alt=""></img>: "" }
             <h1>JBelly CBD Store</h1>
-            <p>
-                Type in discount code JBELLYBURN at checkout for a 10% discount on your order and FREE shipping!
-                </p>
             <StyledLink onClick={scrollToStore}><h2>THC Free and Pure CBD Products</h2></StyledLink>
+            <img src="https://i.imgur.com/UnlJpWC.png" alt="COVER IMAGE UNABLE TO LOAD, PLEASE REFRESH"></img>
         </Cover>
         <div ref={storeRef}><Store></Store></div>
         <Purpose>
